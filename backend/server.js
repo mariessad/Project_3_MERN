@@ -12,6 +12,7 @@ const mongoose = require("mongoose");
 
 // import user router
 const userRouter = require("./routes/api/users");
+const artRouter = require("./routes/api/arts")
 
 // connect to config file
 dotenv.config();
@@ -39,6 +40,8 @@ app.use(morgan("dev"));
 app.use(express.json());
 
 app.use("/api/users", userRouter);
+
+app.use("/art", artRouter);
 
 app.all("*", (request, response) => {
   response.send("undefined route");
