@@ -34,5 +34,31 @@ exports.createArt = async (req, res) => {
 };
 
 // update an art
+exports.updateArt = async (req, res) => {
+  const { id } = req.params;
+
+  const art = await Art.findByIdAndUpdate(
+    { _id: id },
+    {
+      ...req.body,
+    }
+  );
+  if (!art) {
+    return res.status(404).json({ error: "no such art" });
+  }
+
+  res.status(200).json(art);
+};
 
 // delete an art
+exports.deleteArt = async (req, res) => {
+  const { id } = req.params;
+
+  const art = await Art.findOneAndDelete({ _id: id });
+
+  if (!art) {
+    return res.status(404).json({ error: "no such art" });
+  }
+
+  res.status(200).json(art);
+};

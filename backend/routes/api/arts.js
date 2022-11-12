@@ -5,12 +5,14 @@ const express = require("express");
 const artController = require("../../controllers/api/artController");
 
 // Use express to create a router
-const router = express.Router();
+const artRouter = express.Router();
 
 // Use the router to redirect to different controller depending on the method
-router.route("/").post(artController.createArt);
-router.route("/:id").get(artController.getArt);
-router.route("/").get(artController.getAllArt);
+artRouter.route("/").post(artController.createArt);
+artRouter.route("/:id").get(artController.getArt);
+artRouter.route("/").get(artController.getAllArt);
+artRouter.route("/:id").delete(artController.deleteArt);
+artRouter.route("/:id").patch(artController.updateArt);
 
 // EXPORT ROUTER TO BE USED IN OTHER PARTS OF OUR APPLICATION
 module.exports = artRouter;

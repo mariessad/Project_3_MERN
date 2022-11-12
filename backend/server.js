@@ -41,7 +41,7 @@ app.use(express.json());
 
 app.use("/api/users", userRouter);
 
-app.use("/art", artRouter);
+app.use("/api/arts", artRouter);
 
 app.all("*", (request, response) => {
   response.send("undefined route");

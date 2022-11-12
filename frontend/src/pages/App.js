@@ -5,6 +5,7 @@ import AuthPage from "./AuthPage"
 import NewOrderPage from "./NewOrderPage";
 import OrderHistoryPage from "./OrderHistoryPage";
 import Navbar from "../components/Navbar";
+import Art from "./Art";
 import { getUser } from "../utilities/users-service";
 
 // CREATE COMPONENT
@@ -20,6 +21,7 @@ const App = () => {
           <Routes>
             <Route path="/orders/new/:id" element={<NewOrderPage />} />
             <Route path="/orders" element={<OrderHistoryPage />} />
+            <Route path="/art" element={<Art />}/>
           </Routes>
         </>
       ) : (
@@ -29,5 +31,4 @@ const App = () => {
   );
 };
 
-// EXPORT COMPONENT
 export default App;
