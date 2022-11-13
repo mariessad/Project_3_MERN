@@ -1,8 +1,10 @@
 import React from 'react'
+import background from "../pinkbg.jpg"
 
-function Index() {
+function Home() {
   return (
-    <div> <img className="heart-gif" src={"/img/heart_icon_gif.gif"} />
+    <div style={{backgroundImage: `url(${background})`, height: '100vh'}}> 
+    <img className="heart-gif" src={"/img/heart_icon_gif.gif"} />
     <div className="">
       <a href="/art">
         {" "}
@@ -19,4 +21,4 @@ function Index() {
   )
 }
 
-export default Index
+export default Home

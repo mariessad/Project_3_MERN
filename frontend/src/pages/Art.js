@@ -1,16 +1,39 @@
+import background from "../pinkbg.jpg"
+import { useEffect, useState} from "react"
 const React = require("react");
-// const DefaultLayout = require("./layouts/default");
 
-class Art extends React.Component {
-  render() {
-    const { art } = this.props;
-    console.log(art);
+
+
+const Art =() =>  {
+  // const { art } = this.props;
+
+    // call data from database
+    const [artData, setArtData] = useState([]);
+
+    // fires once upon render
+    useEffect(() => {
+    const fetchAllArt = async () => {
+      const response = await fetch('/api/arts')
+    // pass the json data on, gives array of objects
+      const json = await response.json()
+      console.log(json)
+    if(response.ok){
+      setArtData(json)
+    }
+  }
+  // call the function
+  fetchAllArt()
+    }, []);
+    console.log(artData);
+    
     return (
       <div>
+      {/* <div style={{backgroundImage: `url(${background})`, width: '100%', height: '100%' }}></div> */}
+      <h1>Shop Art</h1>
         <a href={"/art/new"}>Add New Art listing</a>
-        {art.map((arts, i) => {
+        {artData.map((arts, i) => {
           return (
-            <div className="product-container" key={i}>
+            <div className="product-container"  key={i}>
               <p className="product-title">{arts.title}</p>
               <img className="product-img" src={`${arts.image}`}></img>
               <p className="product-price">${arts.price}</p>
@@ -55,5 +78,5 @@ class Art extends React.Component {
       </div>
     );
   }
-}
+
 export default Art;

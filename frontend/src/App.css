@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Roboto&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -5,30 +7,44 @@
 
 nav {
   /* list-style: none; */
-  display: flex;
-  /* flex-wrap: nowrap; */
+  /* display: flex; */
   width: 100%;
   /* border: 1px solid red; */
-  background-color: rgb(255, 161, 255);
+  background-image: linear-gradient(
+    rgb(196, 19, 187),
+    rgba(255, 161, 255, 0.616)
+  );
+  /* background-color: rgb(255, 161, 255); */
   font-family: "Lobster";
 }
 
-nav > li {
+ul {
   display: flex;
-  justify-content: flex-end;
-  margin: 1rem;
-  list-style: none;
-  width: 100vw;
+  justify-content: center;
+  /* border: 1px solid red; */
+  font-size: large;
+  padding-top: 30px;
+  height: 100px;
 }
 
 .nav-li {
+  letter-spacing: 2px;
   margin: 1rem;
+  list-style: none;
+  color: rgb(0, 0, 0);
+}
+.heart {
+  font-size: 30px;
+}
+.nav-li:hover {
+  color: white;
 }
 .nav-logo {
   width: 120px;
   height: auto;
-  margin-right: 30px;
+  /* margin-right: 30px; */
 }
+
 title {
   font-family: "Lobster";
 }
@@ -63,10 +79,14 @@ title {
   border-radius: 0.5rem;
 }
 
+/* cart */
 .cart {
   width: 130px;
   text-align: end;
   margin-right: 30px;
+}
+.cart:hover{
+  filter: invert();
 }
 
 .add-to-cart {
@@ -90,24 +110,26 @@ title {
 /* index pg */
 .index-shop {
   width: 100%;
-  height: 50px;
+  height: 100px;
   text-align: center;
   margin-top: 1rem;
   background-color: rgb(252, 161, 255);
   background: radial-gradient(
     circle,
     rgb(252, 161, 255) 0%,
-    rgb(255, 230, 255) 100%
+    rgba(255, 230, 255, 0.103) 100%
   );
-  padding-top: 5%;
+  padding-top: 40px;
   color: white;
   font-weight: bold;
   font-family: "Roboto";
+  letter-spacing: 2px;
+  font-size: large;
 }
 .index-shop:hover {
   text-decoration: underline;
   cursor: pointer;
-  color: rgb(104, 62, 105);
+  color: rgb(196, 19, 187);
 }
 
 /* jewelry pg */
@@ -163,6 +185,8 @@ input[type="password"]:hover {
   width: auto;
   height: 300px;
   margin: auto;
+  margin-bottom: 50px;
+  padding-top: 3%;
 }
 
 /* cart pg */
@@ -206,8 +230,18 @@ footer {
   background-color: rgb(255, 161, 255);
   font-family: "Lobster";
   margin-top: 1rem;
+  height: 100px;
+  justify-content: space-around;
 }
 
+.footer-div {
+  display: flex;
+  justify-content: space-around;
+}
+
+.footer-item {
+  padding-top: 3%;
+}
 /* admin login */
 .login-div {
   width: 300px;
