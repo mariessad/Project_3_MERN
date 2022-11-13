@@ -3,7 +3,6 @@ const express = require("express");
 
 // IMPORT ART CONTROLLER
 const artController = require("../../controllers/api/artController");
-
 // Use express to create a router
 const artRouter = express.Router();
 

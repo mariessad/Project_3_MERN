@@ -13,10 +13,12 @@ const Art =() =>  {
     // fires once upon render
     useEffect(() => {
     const fetchAllArt = async () => {
-      const response = await fetch('/api/arts')
+      const response = await fetch('/art/api/arts')
+      
     // pass the json data on, gives array of objects
+    console.log(response)
       const json = await response.json()
-      console.log(json)
+      
     if(response.ok){
       setArtData(json)
     }
@@ -66,6 +68,8 @@ const Art =() =>  {
               {/* <button >
                 Add to Cart
               </button> */}
+              
+              
               <a href={`art/${arts._id}/edit`}>
                 <button>Edit</button>{" "}
               </a>
