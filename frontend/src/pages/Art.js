@@ -27,6 +27,8 @@ const Art =() =>  {
   fetchAllArt()
     }, []);
     console.log(artData);
+ 
+
     
     return (
       <div>

@@ -10,32 +10,38 @@ import Home from "./Home";
 import Footer from "../components/Footer";
 import { getUser } from "../utilities/users-service";
 
-
 // CREATE COMPONENT
 const App = () => {
   // Create a variable to hold the state of our component
   const [user, setUser] = useState(getUser());
-  // console.log(user);
 
-//   // call data from database
+  const [poemApi, setPoemApi] = useState(["poem", "poems"]);
 
-//   const [artData, setArtData] = useState(null);
+  const queryPoemAP1 = async () => {
+    try {
+      const response = await fetch(
+        `https://www.poemist.com/api/v1/randompoems`
+      );
+      const data = await response.json();
+      console.log(data);
+      setPoemApi(data);
+    } catch (e) {
+      console.log(e);
+    }
+  };
 
-//   // fires once upon render
-//   useEffect(() => {
-//   const fetchAllArt = async () => {
-//     const response = await fetch('http://localhost:5000/api/arts')
-//   // pass the json data on, gives array of objects
-//     const json = await response.json()
+  const [productApi, setProductApi] = useState([])
 
-//   if(response.ok){
-//     setArtData(json)
-//   }
-// }
-
-// // call the function
-// fetchAllArt()
-//   }, []);
+  const queryProductsApi = async () => {
+    try {
+      const response = fetch("https://fakestoreapi.com/products/1")
+      const data = await response.json();
+      console.log(data);
+      setProductApi(data);
+    } catch (e) {
+      console.log(e);
+    }
+  };
 
   return (
     <main className="App">
@@ -43,7 +49,10 @@ const App = () => {
         <>
           <Navbar user={user} />
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route
+              path="/"
+              element={<Home queryPoemAP1={queryPoemAP1} poemApi={poemApi} />}
+            />
             <Route path="/orders/new/:id" element={<NewOrderPage />} />
             <Route path="/orders" element={<OrderHistoryPage />} />
             <Route path="/art" element={<Art />} />

@@ -35,7 +35,14 @@ ul {
 }
 .heart {
   font-size: 30px;
+  animation: beat .25s infinite alternate;
+	transform-origin: center;
 }
+
+@keyframes beat{
+	to { transform: scale(1.4); }
+}
+
 .nav-li:hover {
   color: white;
 }
@@ -107,7 +114,7 @@ title {
 .display-none {
   display: none;
 }
-/* index pg */
+/* index Home pg */
 .index-shop {
   width: 100%;
   height: 100px;
@@ -132,6 +139,38 @@ title {
   color: rgb(196, 19, 187);
 }
 
+.poem{
+  display: block;
+  width: 200px;
+  height: 50px;
+  margin: auto;
+  text-align: center;
+  
+}
+
+.poem:hover{
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
+.poem-div{
+  width: 500px;
+  height: 200px;
+  overflow: scroll;
+  margin: auto;
+}
+
+.poem-title{
+  text-align: center;
+  font-size: large;
+  margin-bottom: 10px;
+}
+
+.poem-content{
+  margin: 10px;
+  line-height: 2;
+}
 /* jewelry pg */
 .jewelry-img {
   display: block;
