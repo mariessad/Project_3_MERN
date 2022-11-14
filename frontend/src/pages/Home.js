@@ -26,8 +26,11 @@ function Home({ queryPoemAP1, poemApi }) {
       <a href="/jewelry">
         <div className="index-shop">Shop Jewelry</div>
       </a>
-      <div className='poem' onClick={queryPoemAP1}>Give Me A Poem</div>
-    <div className='poem-div'>{poemData[2]}</div>
+      
+    <div className='poem-div'>
+    <div className='poem' onClick={queryPoemAP1}>Give Me A Poem</div>
+    {poemData[2]}
+    </div>
       {/* <div className="index-shop"><a href="/art">Shop All</a></div> */}
     </div></div>
   )

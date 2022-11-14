@@ -35,12 +35,14 @@ ul {
 }
 .heart {
   font-size: 30px;
-  animation: beat .25s infinite alternate;
-	transform-origin: center;
+  animation: beat 0.25s infinite alternate;
+  transform-origin: center;
 }
 
-@keyframes beat{
-	to { transform: scale(1.4); }
+@keyframes beat {
+  to {
+    transform: scale(1.4);
+  }
 }
 
 .nav-li:hover {
@@ -55,6 +57,8 @@ ul {
 title {
   font-family: "Lobster";
 }
+.products-div{}
+
 .product-container {
   display: flex;
   flex-direction: column;
@@ -64,6 +68,7 @@ title {
   border-radius: 0.5rem;
   margin-top: 1rem;
   font-family: "roboto";
+  padding: 3%;
 }
 
 .product-container > p {
@@ -86,13 +91,16 @@ title {
   border-radius: 0.5rem;
 }
 
+.white {
+  background-color: rgba(255, 255, 255, 0.527);
+}
 /* cart */
 .cart {
   width: 130px;
   text-align: end;
   margin-right: 30px;
 }
-.cart:hover{
+.cart:hover {
   filter: invert();
 }
 
@@ -139,35 +147,39 @@ title {
   color: rgb(196, 19, 187);
 }
 
-.poem{
+.poem {
   display: block;
   width: 200px;
   height: 50px;
   margin: auto;
   text-align: center;
-  
+  padding: 3%;
+  border: 1px solid rgb(196, 19, 187);
+  border-radius: 5px;
 }
 
-.poem:hover{
+.poem:hover {
   background-color: black;
   color: white;
   cursor: pointer;
 }
 
-.poem-div{
+.poem-div {
   width: 500px;
   height: 200px;
   overflow: scroll;
   margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
-.poem-title{
+.poem-title {
   text-align: center;
   font-size: large;
   margin-bottom: 10px;
 }
 
-.poem-content{
+.poem-content {
   margin: 10px;
   line-height: 2;
 }
@@ -183,13 +195,18 @@ title {
 form {
   margin: auto;
   box-sizing: border-box;
-  width: 200px;
+  width: 400px;
   padding: 20px;
   font-family: "Roboto";
+  background-color: rgb(255, 166, 225);
+  border-radius: 10px;
 }
 
 input[type="text"],
-input[type="password"] {
+input[type="password"], 
+input[type="email"] {
+  display: block;
+  margin: auto;
   padding: 10px;
   margin: 10px 0;
   font-family: "Roboto";

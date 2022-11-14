@@ -1,10 +1,12 @@
+import FakeProducts from "../components/FakeProducts";
 import background from "../pinkbg.jpg"
 import { useEffect, useState} from "react"
 const React = require("react");
 
 
 
-const Art =() =>  {
+
+const Art =({productApi, queryProductsApi}) =>  {
   // const { art } = this.props;
 
     // call data from database
@@ -32,8 +34,7 @@ const Art =() =>  {
     
     return (
       <div>
-      {/* <div style={{backgroundImage: `url(${background})`, width: '100%', height: '100%' }}></div> */}
-      <h1>Shop Art</h1>
+      <FakeProducts productApi={productApi} queryProductsApi={queryProductsApi}/>
         <a href={"/art/new"}>Add New Art listing</a>
         {artData.map((arts, i) => {
           return (

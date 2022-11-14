@@ -7,6 +7,7 @@ import OrderHistoryPage from "./OrderHistoryPage";
 import Navbar from "../components/Navbar";
 import Art from "./Art";
 import Home from "./Home";
+import CartPage from "./CartPage";
 import Footer from "../components/Footer";
 import { getUser } from "../utilities/users-service";
 
@@ -16,6 +17,10 @@ const App = () => {
   const [user, setUser] = useState(getUser());
 
   const [poemApi, setPoemApi] = useState(["poem", "poems"]);
+
+  const [cart, setCart] = useState([]);
+
+  const amountOfItems = (id) => cart.filter((item) => item.id === id).length;
 
   const queryPoemAP1 = async () => {
     try {
@@ -34,15 +39,16 @@ const App = () => {
 
   const queryProductsApi = async () => {
     try {
-      const response = fetch("https://fakestoreapi.com/products/1")
-      const data = await response.json();
-      console.log(data);
-      setProductApi(data);
+      const response = await fetch("https://fakestoreapi.com/products/")
+      const adata = await response.json();
+      console.log(adata);
+      setProductApi(adata);
     } catch (e) {
       console.log(e);
     }
   };
 
+  
   return (
     <main className="App">
       {user ? (
@@ -55,7 +61,8 @@ const App = () => {
             />
             <Route path="/orders/new/:id" element={<NewOrderPage />} />
             <Route path="/orders" element={<OrderHistoryPage />} />
-            <Route path="/art" element={<Art />} />
+            <Route path="/art" element={<Art queryProductsApi={queryProductsApi} productApi={productApi} />} />
+            <Route path="/cart" element={<CartPage cart={cart} setCart={setCart} amountOfItems={amountOfItems}/>} />
           </Routes>
           <Footer />
         </>
