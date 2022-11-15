@@ -1,4 +1,5 @@
 import { React } from "react";
+import heartTile from "../heart_eye_tile.png"
 
 function Cart({ cart, setCart,}) {
   console.log(cart);
@@ -25,8 +26,8 @@ function Cart({ cart, setCart,}) {
 
   const listItemsInCart = () =>
     cart.map((item) => (
-      <div className="product-container" key={item.id}>
-        <h3 className="">
+      <div className="cart-container" key={item.id}>
+        <h3 className="product-title">
           ({amountOfItems(item.id)}) {`${item.title}`}
         </h3>
         <img
@@ -47,11 +48,13 @@ function Cart({ cart, setCart,}) {
 
   return (
     <div className="">
-      <h2 className="">Your Shopping Cart</h2>
+      <div className="cart-title"><h2>Your Shopping Cart</h2></div>
+      <img className="cart-tile" src={heartTile}/>
       <div className="cart-item">
         <div className="">{listItemsInCart()}</div>
       </div>
       <div className="">
+      
         <h3 className="cart-total">Total: ${cartTotal}</h3>
       </div>
 
@@ -60,19 +63,6 @@ function Cart({ cart, setCart,}) {
       </button>
     </div>
   );
-
-  // return (
-  //   <div className="cart-container">
-  //     <h2 className='text-white'>Your Shopping Cart</h2>
-  //     <div className='d-flex justify-content-center mt-5 bg-light'>
-  //       <div className="cart-items">{listItemsInCart()}</div>
-  //       <div className='cart-total'>
-  //         <h3 className=''>Total: ${cartTotal}</h3>
-  //         <button className='btn btn-success mt-3' onClick={checkout}>Check Out</button>
-  //       </div>
-  //     </div>
-  //   </div>
-  // )
 }
 
 export default Cart;

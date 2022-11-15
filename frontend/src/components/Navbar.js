@@ -22,10 +22,9 @@ const Navbar = ({ user, setUser }) => {
     <Link to="/fiber"><li className="nav-li">Fiber</li></Link>
     <Link to="/jewelry"><li className="nav-li">Jewelry</li></Link>
     <Link to="/about"><li className="nav-li">About</li></Link>
-    
-      <Link to="/orders"><li className="nav-li">Order History</li></Link>
-      {/* &nbsp; | &nbsp; */}
-      <Link to="/orders/new/:id"><li className="nav-li">New Order</li></Link>
+      {/* <Link to="/orders"><li className="nav-li">Order History</li></Link> */}
+      &nbsp; | &nbsp;
+      {/* <Link to="/orders/new/:id"><li className="nav-li">New Order</li></Link> */}
       <span>Welcome {user.newUser.name}</span>
       <Link onClick={() => {
             return handleLogOut();
