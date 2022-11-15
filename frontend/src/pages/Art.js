@@ -6,7 +6,7 @@ const React = require("react");
 
 
 
-const Art =({productApi, queryProductsApi}) =>  {
+const Art =({productApi, queryProductsApi, setCart}) =>  {
   // const { art } = this.props;
 
     // call data from database
@@ -34,7 +34,7 @@ const Art =({productApi, queryProductsApi}) =>  {
     
     return (
       <div>
-      <FakeProducts productApi={productApi} queryProductsApi={queryProductsApi}/>
+      <FakeProducts productApi={productApi} queryProductsApi={queryProductsApi} setCart={setCart}/>
         <a href={"/art/new"}>Add New Art listing</a>
         {artData.map((arts, i) => {
           return (

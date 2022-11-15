@@ -2,7 +2,7 @@ import React from "react";
 import background from "../pinkbg.jpg";
 import { useEffect, useState} from "react"
 
-function FakeProducts({ productApi, queryProductsApi, setCart }) {
+function FakeProducts({ productApi, queryProductsApi, setCart}) {
 //   console.log(productApi);
 
 const addToCart = (item) => setCart((currentCart) => [...currentCart, item]);
@@ -24,6 +24,7 @@ queryProductsApi()
         alt={product.title}
       ></img>
       <p className="product-price">${product.price}</p>
+      <button className='buy-btn' type="submit" onClick={() => addToCart(product)}> Add to Cart</button>
       {/* <form action={`/cart/?_method=POST`} method="POST">
                 <input
                   className="display-none"

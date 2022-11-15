@@ -247,12 +247,15 @@ input[type="password"]:hover {
 
 /* cart pg */
 .checkout-pay {
-  margin: 2rem;
+  display: block;
+  margin: auto;
+  margin-top: 15px;
   width: 120px;
   height: 50px;
   border-radius: 0.5rem;
   background-color: rgb(78, 218, 78);
   border: none;
+  font: inherit;
 }
 
 .checkout-pay:hover {
@@ -273,9 +276,18 @@ input[type="password"]:hover {
 
 .cart-item {
   margin: auto;
+  min-height: 100px;
   width: 500px;
   border: 1px solid gray;
   padding: 1%;
+}
+
+.cart-total{
+  margin: auto;
+  border: solid 1px grey;
+  width: 500px;
+  padding: 1%;
+  text-align: right;
 }
 
 /* footer */

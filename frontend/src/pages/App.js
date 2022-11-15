@@ -61,7 +61,7 @@ const App = () => {
             />
             <Route path="/orders/new/:id" element={<NewOrderPage />} />
             <Route path="/orders" element={<OrderHistoryPage />} />
-            <Route path="/art" element={<Art queryProductsApi={queryProductsApi} productApi={productApi} />} />
+            <Route path="/art" element={<Art queryProductsApi={queryProductsApi} productApi={productApi} setCart={setCart} />} />
             <Route path="/cart" element={<CartPage cart={cart} setCart={setCart} amountOfItems={amountOfItems}/>} />
           </Routes>
           <Footer />

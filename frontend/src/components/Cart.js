@@ -1,15 +1,15 @@
-import { React } from 'react'
+import { React } from "react";
 
+function Cart({ cart, setCart,}) {
+  console.log(cart);
 
-function Cart({ cart, setCart, amountOfItems }) {
-
-
-
-  const cartTotal = cart
+  const cartTotal = cart.reduce((total) => total + 20, 0);
 
   const removeFromCart = (item) => {
     setCart((currentCart) => {
-      const indexOfItemToRemove = currentCart.findIndex((cartItem) => cartItem.id === item.id);
+      const indexOfItemToRemove = currentCart.findIndex(
+        (cartItem) => cartItem.id === item.id
+      );
 
       if (indexOfItemToRemove === -1) {
         return currentCart;
@@ -21,34 +21,45 @@ function Cart({ cart, setCart, amountOfItems }) {
     });
   };
 
-  // const amountOfItems = (id) => cart.filter((item) => item.id === id).length;
+  const amountOfItems = (id) => cart.filter((item) => item.id === id).length;
 
-  const listItemsInCart = () => cart.map((item) => (
-    <div className='' key={item.id}>
-      <h3 className='' >
-        {/* ({amountOfItems(item.id)}) {`${item.name}`} */}
-      </h3>
-      <img className="cart-image" src={`${item.background_image}`} alt={item.name} /> <br />
-      <button className='' type="submit" onClick={() => removeFromCart(item)}>Remove</button>
-    </div>
-  ));
+  const listItemsInCart = () =>
+    cart.map((item) => (
+      <div className="product-container" key={item.id}>
+        <h3 className="">
+          ({amountOfItems(item.id)}) {`${item.title}`}
+        </h3>
+        <img
+          className="product-img"
+          src={`${item.image}`}
+          alt={item.title}
+        />{" "}
+        <br />
+        <button className="add-to-cart" type="submit" onClick={() => removeFromCart(item)}>
+          Remove
+        </button>
+      </div>
+    ));
 
   const checkout = () => {
-    setCart([])
-  }
+    setCart([]);
+  };
 
   return (
     <div className="">
-      <h2 className=''>Your Shopping Cart</h2>
-      <div className=''>
+      <h2 className="">Your Shopping Cart</h2>
+      <div className="cart-item">
         <div className="">{listItemsInCart()}</div>
-        <div className=''>
-          <h3 className=''>Total: ${cartTotal}</h3>
-          <button className='' onClick={checkout}>Check Out</button>
-        </div>
       </div>
+      <div className="">
+        <h3 className="cart-total">Total: ${cartTotal}</h3>
+      </div>
+
+      <button className="checkout-pay" onClick={checkout}>
+        Check Out
+      </button>
     </div>
-  )
+  );
 
   // return (
   //   <div className="cart-container">
@@ -64,4 +75,4 @@ function Cart({ cart, setCart, amountOfItems }) {
   // )
 }
 
-export default Cart
+export default Cart;
