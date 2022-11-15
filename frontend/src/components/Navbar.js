@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import * as userService from "./../utilities/users-service";
 
 
-const Navbar = ({ user, setUser }) => {
+const Navbar = ({ user, setUser, cart }) => {
   // console.log(user);
   const handleLogOut = () => {
     // Call the logout function
@@ -23,13 +23,13 @@ const Navbar = ({ user, setUser }) => {
     <Link to="/jewelry"><li className="nav-li">Jewelry</li></Link>
     <Link to="/about"><li className="nav-li">About</li></Link>
       {/* <Link to="/orders"><li className="nav-li">Order History</li></Link> */}
-      &nbsp; | &nbsp;
+      &nbsp; <span className="nav-li">|</span> &nbsp;
       {/* <Link to="/orders/new/:id"><li className="nav-li">New Order</li></Link> */}
-      <span>Welcome {user.newUser.name}</span>
+      <li className="nav-li"><span className='white'>Welcome, {user.newUser.name}</span></li>
       <Link onClick={() => {
             return handleLogOut();
-          }} className="nav-link ms-5" aria-current="page" > Log Out</Link>
-      <Link to="/cart"><li className="nav-li cart"><img src={"/img/shopping-cart-3045.png"}></img></li></Link>
+          }} className="nav-li" aria-current="page" > Log Out</Link>
+      <Link to="/cart"><li className="nav-li cart">({cart.length})<img src={"/img/shopping-cart-3045.png"}></img></li></Link>
     </ul>
     </nav>
   );

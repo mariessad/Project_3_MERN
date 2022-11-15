@@ -24,7 +24,7 @@ queryProductsApi()
         alt={product.title}
       ></img>
       <p className="product-price">${product.price}</p>
-      <button className='buy-btn' type="submit" onClick={() => addToCart(product)}> Add to Cart</button>
+      <button className='add-to-cart' type="submit" onClick={() => addToCart(product)}> Add to Cart</button>
       {/* <form action={`/cart/?_method=POST`} method="POST">
                 <input
                   className="display-none"
@@ -51,7 +51,6 @@ queryProductsApi()
                   value="Add to Cart"
                 />
               </form> */}
-              <button onClick={addToCart}></button>
     </div>
   ));
 

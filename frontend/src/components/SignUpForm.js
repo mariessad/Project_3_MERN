@@ -59,6 +59,7 @@ const SignUpForm = ({ setUser }) => {
   // Reder component
   return (
     <div>
+    
       <div className="form-container">
         <form
           autoComplete="off"
@@ -66,6 +67,7 @@ const SignUpForm = ({ setUser }) => {
             return handleFormSubmission(e);
           }}
         >
+        <h4>Create an account</h4>
           <label>Name</label>
           <input
             type="text"

@@ -13,6 +13,7 @@ function Home({ queryPoemAP1, poemApi }) {
   ))
   return (
     <div style={{backgroundImage: `url(${background})`, height: '100vh'}}> 
+    <div className='black-banner'>Winter sale: save 10% with code WINTER</div>
     <img className="heart-gif" src={"/img/heart_icon_gif.gif"} />
     
     <div className="">

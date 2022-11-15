@@ -9,6 +9,7 @@ import Art from "./Art";
 import Home from "./Home";
 import CartPage from "./CartPage";
 import Footer from "../components/Footer";
+import Fiber from "../components/Fiber";
 import { getUser } from "../utilities/users-service";
 
 // CREATE COMPONENT
@@ -53,7 +54,7 @@ const App = () => {
     <main className="App">
       {user ? (
         <>
-          <Navbar user={user} />
+          <Navbar user={user} cart={cart} />
           <Routes>
             <Route
               path="/"
@@ -63,6 +64,7 @@ const App = () => {
             <Route path="/orders" element={<OrderHistoryPage />} />
             <Route path="/art" element={<Art queryProductsApi={queryProductsApi} productApi={productApi} setCart={setCart} />} />
             <Route path="/cart" element={<CartPage cart={cart} setCart={setCart} amountOfItems={amountOfItems}/>} />
+            <Route path="/fiber" element={<Fiber/>}/>
           </Routes>
           <Footer />
         </>

@@ -53,11 +53,11 @@ function Cart({ cart, setCart,}) {
       <div className="cart-item">
         <div className="">{listItemsInCart()}</div>
       </div>
-      <div className="">
-      
-        <h3 className="cart-total">Total: ${cartTotal}</h3>
+      <div className="coupon-code"> 
+        <label>Enter coupon code</label>
+        <input type="text"/>
       </div>
-
+<h3 className="cart-total">Total: ${cartTotal}</h3>
       <button className="checkout-pay" onClick={checkout}>
         Check Out
       </button>
